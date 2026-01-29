@@ -14,4 +14,9 @@ export class SpellService {
     .then(spells => spells.results);
   }
   
+  getSpellByindex(index: string){
+    const selectedSpellURL = this.spellsURL + '/' + index;
+    return fetch(selectedSpellURL)
+    .then(resp => resp.json())
+  }
 }
